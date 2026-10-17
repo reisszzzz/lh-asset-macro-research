@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LH Asset — Revisão Macro 2026</title>
+<meta name="description" content="Revisão macroeconômica de 2026 (janeiro a outubro) para Brasil, Estados Unidos, Zona do Euro e China: política monetária, fiscal, atividade, inflação, emprego, bolsas, política e geopolítica.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f3f0e8; --surface:#faf8f3; --ink:#16181a; --ink-2:#45484c; --muted:#7a7c7f;
+  --rule:#d8d2c4; --rule-strong:#16181a; --accent:#a8391f; --cool:#1a68a0; --hike:#a8391f; --cut:#1a68a0;
+  --tint:#ebe6da; --shadow:rgba(22,24,26,.08);
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#121314; --surface:#1a1a19; --ink:#ece8df; --ink-2:#bdb8ad; --muted:#8a8780;
+    --rule:#2f3032; --rule-strong:#ece8df; --accent:#d9694a; --cool:#4b97cc; --hike:#d9694a; --cut:#4b97cc;
+    --tint:#202021; --shadow:rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#121314; --surface:#1a1a19; --ink:#ece8df; --ink-2:#bdb8ad; --muted:#8a8780;
+  --rule:#2f3032; --rule-strong:#ece8df; --accent:#d9694a; --cool:#4b97cc; --hike:#d9694a; --cut:#4b97cc;
+  --tint:#202021; --shadow:rgba(0,0,0,.4);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+@media (max-width:640px){.wrap{padding:0 16px}}
+.mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+/* ---------- Masthead ---------- */
+.mast{border-bottom:1px solid var(--rule)}
+.mast .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.brand{display:flex;align-items:baseline;gap:14px;text-decoration:none}
+.brand b{font-family:var(--serif);font-weight:600;font-size:22px;letter-spacing:-.01em}
+.brand b::before{content:"";display:inline-block;width:9px;height:9px;background:var(--accent);margin-right:9px;transform:translateY(-2px)}
+.brand span{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.mast nav{display:flex;align-items:center;gap:22px;font-size:13px;color:var(--ink-2)}
+.mast nav a{text-decoration:none}
+.mast nav a:hover{color:var(--ink)}
+.theme-btn{background:none;border:1px solid var(--rule);color:var(--ink-2);font:500 12px var(--mono);padding:6px 10px;border-radius:2px;cursor:pointer;letter-spacing:.06em}
+.theme-btn:hover{border-color:var(--ink);color:var(--ink)}
+@media (max-width:720px){.mast nav a{display:none}.brand span{display:none}}
+
+/* ---------- Hero ---------- */
+.hero{padding:72px 0 56px;border-bottom:1px solid var(--rule)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:64px;align-items:end}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(40px,6.4vw,84px);line-height:1.0;letter-spacing:-.025em;margin-top:22px}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero .lede{font-family:var(--serif);font-size:20px;line-height:1.5;color:var(--ink-2)}
+.hero .lede p+p{margin-top:14px}
+.byline{display:flex;gap:18px;flex-wrap:wrap;margin-top:28px;padding-top:16px;border-top:1px solid var(--rule);font-size:12.5px;color:var(--muted)}
+.byline strong{color:var(--ink);font-weight:500}
+@media (max-width:900px){.hero{padding:48px 0 40px}.hero-grid{grid-template-columns:1fr;gap:28px}.hero .lede{font-size:18px}}
+
+/* ---------- Global context ---------- */
+.section-head{display:grid;grid-template-columns:200px 1fr;gap:32px;padding:56px 0 28px;align-items:baseline}
+.section-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3.4vw,40px);letter-spacing:-.02em;line-height:1.1}
+@media (max-width:900px){.section-head{grid-template-columns:1fr;gap:10px;padding:44px 0 20px}}
+.forces{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--rule-strong)}
+.force{padding:24px 28px 30px 0;border-right:1px solid var(--rule)}
+.force+.force{padding-left:28px}
+.force:last-child{border-right:0}
+.force .n{font-family:var(--mono);font-size:12px;color:var(--accent)}
+.force h3{font-family:var(--serif);font-weight:500;font-size:22px;line-height:1.2;margin:10px 0 10px;letter-spacing:-.01em}
+.force p{font-size:14.5px;color:var(--ink-2)}
+@media (max-width:900px){.forces{grid-template-columns:1fr}.force,.force+.force{padding:22px 0;border-right:0;border-bottom:1px solid var(--rule)}}
+
+.figs{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:40px;padding:44px 0 64px}
+@media (max-width:900px){.figs{grid-template-columns:1fr}}
+figure{background:var(--surface);border:1px solid var(--rule);padding:22px 22px 16px;position:relative}
+figure .fig-k{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+figure h4{font-family:var(--serif);font-weight:500;font-size:20px;line-height:1.25;margin:6px 0 2px;letter-spacing:-.01em}
+figure .sub{font-size:13px;color:var(--muted);margin-bottom:12px}
+figure svg{display:block;width:100%;height:auto;overflow:visible}
+figcaption{font-size:12px;color:var(--muted);margin-top:10px;padding-top:10px;border-top:1px solid var(--rule)}
+figcaption details{margin-top:6px}
+figcaption summary{cursor:pointer;color:var(--ink-2);font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+figcaption table{width:100%;border-collapse:collapse;margin-top:8px;font-family:var(--mono);font-size:12px}
+figcaption td,figcaption th{text-align:left;padding:4px 0;border-bottom:1px solid var(--rule);font-weight:400}
+figcaption th{color:var(--muted)}
+.ax text{font-family:var(--mono);font-size:11px;fill:var(--muted)}
+.ax line{stroke:var(--rule)}
+.lbl{font-family:var(--mono);font-size:11.5px;fill:var(--ink)}
+.lbl-m{font-family:var(--mono);font-size:11px;fill:var(--muted)}
+.lbl-s{font-family:var(--sans);font-size:12.5px;fill:var(--ink)}
+.hit{fill:transparent;cursor:crosshair}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--paper);font:12px/1.4 var(--sans);padding:8px 10px;max-width:240px;opacity:0;transform:translateY(4px);transition:opacity .12s,transform .12s;z-index:5;box-shadow:0 6px 20px var(--shadow)}
+.tip.on{opacity:1;transform:none}
+.tip b{font-family:var(--mono);font-weight:500;display:block;margin-bottom:2px}
+
+/* ---------- Region selector ---------- */
+.selector-wrap{position:sticky;top:0;z-index:20;background:var(--paper);border-top:1px solid var(--rule-strong);border-bottom:1px solid var(--rule)}
+.selector{display:grid;grid-template-columns:repeat(4,1fr)}
+.tab{appearance:none;background:none;border:0;border-right:1px solid var(--rule);color:var(--ink-2);text-align:left;padding:16px 20px 14px;cursor:pointer;font:inherit;position:relative;transition:background .15s,color .15s}
+.tab:last-child{border-right:0}
+.tab:hover{background:var(--tint);color:var(--ink)}
+.tab .t-n{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--muted)}
+.tab .t-name{display:block;font-family:var(--serif);font-size:24px;line-height:1.15;color:var(--ink);letter-spacing:-.01em;margin-top:2px}
+.tab .t-stat{display:block;font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:4px}
+.tab[aria-selected="true"]{background:var(--surface);color:var(--ink)}
+.tab[aria-selected="true"]::after{content:"";position:absolute;left:0;right:0;top:-1px;height:3px;background:var(--accent)}
+.t-short{display:none}
+.tab:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.selector-wrap.compact .tab{padding:10px 20px}
+.selector-wrap.compact .t-stat,.selector-wrap.compact .t-n{display:none}
+.selector-wrap.compact .t-name{font-size:18px;margin:0}
+@media (max-width:760px){
+  .selector{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .tab{padding:12px 10px}
+  .tab .t-name{font-size:16px}
+  .tab .t-stat{display:none}
+  .t-long{display:none}.t-short{display:inline}
+  .selector-wrap.compact .tab{padding:10px}
+  .selector-wrap.compact .t-name{font-size:15px}
+}
+
+/* ---------- Region article ---------- */
+.region{padding:56px 0 24px;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.region{animation:none}html{scroll-behavior:auto}}
+.r-head{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;padding-bottom:40px;border-bottom:1px solid var(--rule)}
+.r-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4.6vw,58px);line-height:1.04;letter-spacing:-.025em;margin-top:14px}
+.r-head .thesis{font-family:var(--serif);font-size:19px;line-height:1.55;color:var(--ink-2);margin-top:20px;max-width:620px}
+.view{border-left:1px solid var(--rule-strong);padding-left:28px}
+.view ol{list-style:none;counter-reset:v;margin-top:14px}
+.view li{counter-increment:v;display:grid;grid-template-columns:28px 1fr;gap:4px;padding:12px 0;border-bottom:1px solid var(--rule);font-size:14.5px;line-height:1.5}
+.view li:last-child{border-bottom:0}
+.view li::before{content:counter(v,decimal-leading-zero);font-family:var(--mono);font-size:11.5px;color:var(--accent);padding-top:3px}
+@media (max-width:900px){.r-head{grid-template-columns:1fr;gap:32px}.view{border-left:0;border-top:1px solid var(--rule-strong);padding:16px 0 0}}
+
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--rule)}
+.kpi{padding:22px 20px 20px 0;border-right:1px solid var(--rule);min-width:0}
+.kpi:nth-child(4n){border-right:0}
+.kpi:nth-child(4n+2),.kpi:nth-child(4n+3),.kpi:nth-child(4n){padding-left:20px}
+.kpi:nth-child(n+5){border-top:1px solid var(--rule)}
+.kpi .k-l{font-size:12.5px;color:var(--muted);line-height:1.3}
+.kpi .k-v{font-family:var(--serif);font-size:36px;line-height:1.1;letter-spacing:-.02em;margin-top:8px;white-space:nowrap}
+.kpi .k-v small{font-size:18px;color:var(--ink-2)}
+.kpi .k-d{font-family:var(--mono);font-size:11.5px;color:var(--ink-2);margin-top:6px}
+.kpi .k-d i{font-style:normal;color:var(--muted)}
+@media (max-width:900px){
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .kpi,.kpi:nth-child(n){padding:18px 14px 16px 0;border-right:1px solid var(--rule);border-top:0}
+  .kpi:nth-child(2n){border-right:0;padding-left:14px}
+  .kpi:nth-child(n+3){border-top:1px solid var(--rule)}
+  .kpi .k-v{font-size:28px}
+}
+
+.body{display:grid;grid-template-columns:220px minmax(0,1fr);gap:56px;padding-top:48px}
+.toc{position:sticky;top:96px;align-self:start}
+.toc ol{list-style:none;margin-top:14px;border-top:1px solid var(--rule)}
+.toc a{display:grid;grid-template-columns:30px 1fr;padding:8px 0;border-bottom:1px solid var(--rule);font-size:13.5px;color:var(--ink-2);text-decoration:none;transition:color .15s}
+.toc a span{font-family:var(--mono);font-size:11px;color:var(--muted);padding-top:2px}
+.toc a:hover,.toc a.on{color:var(--ink)}
+.toc a.on span{color:var(--accent)}
+@media (max-width:900px){.body{grid-template-columns:1fr;gap:0;padding-top:24px}.toc{display:none}}
+
+.sec{display:grid;grid-template-columns:minmax(0,1fr);padding:0 0 44px;margin-bottom:44px;border-bottom:1px solid var(--rule)}
+.sec .s-k{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.sec .s-k b{color:var(--accent);font-weight:500;margin-right:10px}
+.sec h3{font-family:var(--serif);font-weight:400;font-size:clamp(24px,2.6vw,31px);line-height:1.2;letter-spacing:-.015em;margin:12px 0 18px;max-width:760px}
+.sec .txt{max-width:720px;color:var(--ink-2);font-size:16.5px;line-height:1.7}
+.sec .txt p+p{margin-top:14px}
+.sec .txt strong{color:var(--ink);font-weight:600}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));margin-top:24px;border-top:1px solid var(--rule);max-width:860px}
+.fact{padding:12px 16px 4px 0}
+.fact dt{font-size:12px;color:var(--muted)}
+.fact dd{font-family:var(--mono);font-size:15px;color:var(--ink);margin-top:2px}
+.take{margin-top:22px;max-width:720px;border-left:3px solid var(--accent);padding:2px 0 2px 16px;font-family:var(--serif);font-style:italic;font-size:17.5px;line-height:1.5;color:var(--ink)}
+.take span{font-family:var(--mono);font-style:normal;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:2px}
+
+.steps{list-style:none;margin-top:24px;max-width:720px;border-top:1px solid var(--rule)}
+.steps li{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:10px 0;border-bottom:1px solid var(--rule);font-size:14.5px;color:var(--ink-2)}
+.steps li b{font-family:var(--mono);font-weight:500;font-size:12.5px;color:var(--ink);padding-top:2px}
+@media (max-width:540px){.steps li{grid-template-columns:1fr;gap:2px}}
+
+.risks{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--rule-strong);margin-top:18px}
+.risks>div{padding:18px 24px 6px 0}
+.risks>div+div{border-left:1px solid var(--rule);padding-left:24px}
+.risks h4{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
+.risks h4 .ar{display:inline-block;width:18px}
+.risks ul{list-style:none;margin-top:8px}
+.risks li{padding:10px 0;border-bottom:1px solid var(--rule);font-size:14.5px;color:var(--ink-2)}
+.risks li:last-child{border-bottom:0}
+@media (max-width:700px){.risks{grid-template-columns:1fr}.risks>div+div{border-left:0;padding-left:0;border-top:1px solid var(--rule)}}
+
+.agenda{list-style:none;margin-top:18px;border-top:1px solid var(--rule-strong)}
+.agenda li{display:grid;grid-template-columns:120px 1fr auto;gap:18px;padding:13px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.agenda .d{font-family:var(--mono);font-size:13px}
+.agenda .e{font-size:15px}
+.agenda .w{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+@media (max-width:600px){.agenda li{grid-template-columns:90px 1fr}.agenda .w{display:none}}
+
+.sources{margin-top:10px;font-size:12.5px;color:var(--muted);columns:2;column-gap:32px}
+.sources a{display:block;padding:3px 0;text-decoration:none;break-inside:avoid;color:var(--ink-2)}
+.sources a:hover{text-decoration:underline}
+@media (max-width:700px){.sources{columns:1}}
+
+/* ---------- Footer ---------- */
+footer{margin-top:40px;border-top:1px solid var(--rule-strong);padding:36px 0 56px;font-size:12.5px;color:var(--muted)}
+footer .f-grid{display:grid;grid-template-columns:1fr 2fr;gap:40px}
+footer b{font-family:var(--serif);font-size:19px;color:var(--ink);font-weight:600}
+footer p+p{margin-top:8px}
+@media (max-width:760px){footer .f-grid{grid-template-columns:1fr;gap:16px}}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="wrap">
+    <a class="brand" href="#top"><b>LH Asset</b><span>Macro Research</span></a>
+    <nav>
+      <a href="#contexto">Contexto global</a>
+      <a href="#regioes">Regiões</a>
+      <a href="#metodologia">Metodologia</a>
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="Alternar tema claro/escuro">TEMA</button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Revisão anual · Jan — Out 2026 · Edição nº 04</div>
+        <h1>O ano em que o <em>petróleo</em> voltou a ditar os juros.</h1>
+      </div>
+      <div class="lede">
+        <p>Entramos em 2026 esperando cortes de juros sincronizados e um pouso suave global. A guerra no Irã, iniciada em 28 de fevereiro, desmontou esse roteiro: o fechamento de Hormuz provocou o maior choque de oferta da história do mercado de petróleo.</p>
+        <p>Dez meses depois, o mapa monetário está partido ao meio. Fed e BCE voltaram a subir juros, o Banco Central do Brasil corta e o PBoC está parado. Abaixo, nossa leitura região por região.</p>
+        <div class="byline"><span><strong>Economics News</strong></span><span>Dados até 16.10.2026</span><span>Leitura: 12 min</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contexto" class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">00 — Contexto global</div>
+      <h2>Três forças explicam quase tudo que aconteceu em 2026.</h2>
+    </div>
+    <div class="forces">
+      <article class="force">
+        <div class="n">I.</div>
+        <h3>Um choque de energia que virou choque de inflação</h3>
+        <p>O Brent saiu de US$ 72 para US$ 118 em um mês. A AIE classificou o episódio como a maior interrupção de oferta já registrada. A inflação cheia voltou a subir em todas as quatro regiões, com o núcleo subindo menos.</p>
+      </article>
+      <article class="force">
+        <div class="n">II.</div>
+        <h3>Bancos centrais em direções opostas</h3>
+        <p>O Fed, já sob Kevin Warsh, fez a primeira alta desde 2023, e o BCE subiu duas vezes. O Copom aproveitou o real forte e a atividade mais fraca para cortar 125 bp, e o PBoC preferiu deixar o trabalho para o fiscal.</p>
+      </article>
+      <article class="force">
+        <div class="n">III.</div>
+        <h3>Política no centro da precificação</h3>
+        <p>O segundo turno no Brasil é em 25/out e as eleições de meio de mandato nos EUA, em 3/nov. A França vive impasse orçamentário a oito meses da eleição presidencial. Os prêmios de risco passaram a refletir pesquisas eleitorais tanto quanto dados econômicos.</p>
+      </article>
+    </div>
+
+    <div class="figs">
+      <figure id="figBrent">
+        <div class="fig-k">Figura 1 · Energia</div>
+        <h4>Brent: do pico de guerra à normalização incompleta</h4>
+        <div class="sub">US$ por barril, pontos marcantes de 2026</div>
+        <svg viewBox="0 0 640 300" role="img" aria-labelledby="brentT" id="brentSvg"><title id="brentT">Preço do Brent em datas-chave de 2026</title></svg>
+        <div class="tip" id="tipBrent"></div>
+        <figcaption>Pontos selecionados, não uma série diária. A linha tracejada apenas liga os pontos e não mostra o caminho real entre eles. Fontes: AIE, Kpler, Al Jazeera e Wikipedia (Economic impact of the 2026 Iran war).
+          <details><summary>Ver dados</summary><table id="brentTbl"></table></details>
+        </figcaption>
+      </figure>
+      <figure id="figRates">
+        <div class="fig-k">Figura 2 · Política monetária</div>
+        <h4>A grande divergência dos juros</h4>
+        <div class="sub">Variação da taxa básica em 2026, em pontos-base</div>
+        <svg viewBox="0 0 420 300" role="img" aria-labelledby="ratesT" id="ratesSvg"><title id="ratesT">Variação acumulada das taxas básicas em 2026</title></svg>
+        <div class="tip" id="tipRates"></div>
+        <figcaption>Brasil: Selic. EUA: teto da banda dos Fed funds. Zona do euro: taxa de depósito. China: repo reverso de 7 dias e LPR de 1 ano, ambos sem alteração.
+          <details><summary>Ver dados</summary><table id="ratesTbl"></table></details>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div id="regioes" class="selector-wrap">
+    <div class="wrap">
+      <div class="selector" role="tablist" aria-label="Escolha a região"></div>
+    </div>
+  </div>
+
+  <div class="wrap" id="regionMount" role="tabpanel" aria-live="polite"></div>
+
+  <footer id="metodologia">
+    <div class="wrap f-grid">
+      <div><b>LH Asset</b><p style="margin-top:6px">Macro Research · Revisão 2026</p></div>
+      <div>
+        <p><strong style="color:var(--ink-2)">Metodologia.</strong> A cobertura vai de 1º de janeiro a 16 de outubro de 2026. Os números vêm de fontes oficiais (BCB, IBGE, Tesouro, Fed, BLS, BEA, CBO, BCE, Eurostat, NBS, PBoC) e de imprensa especializada, conforme indicado em cada região. Cotações de mercado são aproximadas e indicadas como tal; nos casos em que as fontes divergem, usamos o valor mais conservador.</p>
+        <p><strong style="color:var(--ink-2)">Aviso.</strong> Material de caráter exclusivamente informativo, que não constitui recomendação de investimento. As opiniões refletem a visão editorial na data de publicação e podem mudar sem aviso.</p>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<script>
+/* ============================================================
+   CONTEÚDO EDITORIAL
+   ============================================================ */
+const REGIONS = {
+  brasil: {
+    n:"01", name:"Brasil", short:"Brasil", tabStat:"Selic 13,75% · −125 bp",
+    kicker:"Brasil · Revisão Jan–Out 2026",
+    title:"Desinflação cara, fiscal no limite e uma eleição já no preço.",
+    thesis:"O Banco Central conseguiu iniciar o ciclo de cortes mesmo em meio ao choque do petróleo, apoiado no real forte e na desaceleração da atividade. O fiscal, por outro lado, só fecha a conta com exceções e contingenciamento. Nas últimas semanas, quem passou a mover o preço dos ativos foi a eleição.",
+    view:[
+      "O Copom cortou 125 bp em cinco reuniões, sempre de 25 em 25. O gradualismo é deliberado: a inflação em 12 meses voltou a superar o teto da meta em setembro.",
+      "O fiscal é o elo mais frágil. Para cumprir a meta, o governo depende de deduções legais e de R$ 16,1 bi congelados, e a dívida bruta caminha para cerca de 83% do PIB.",
+      "O mercado de trabalho segue o mais apertado da série histórica, o que sustenta o consumo, mas limita o espaço para cortes mais rápidos."
+    ],
+    kpis:[
+      {l:"Selic", v:"13,75", u:"%", d:"−125 bp no ano", n:"set/26"},
+      {l:"IPCA 12 meses", v:"4,58", u:"%", d:"▲ acima do teto (4,5%)", n:"set/26"},
+      {l:"PIB 2º tri", v:"+0,5", u:"% t/t", d:"+2,0% a/a", n:"1º tri: +1,1%"},
+      {l:"Desemprego", v:"5,3", u:"%", d:"mínima da série", n:"tri até ago"},
+      {l:"Ibovespa", v:"≈205", u:"mil", d:"≈ +27% no ano", n:"16/out"},
+      {l:"Dólar (R$)", v:"5,07", u:"", d:"≈ −8% no ano", n:"16/out"},
+      {l:"Déficit primário 2026 (Prisma)", v:"53", u:"R$ bi", d:"meta: superávit 0,25%", n:"out/26"},
+      {l:"Dívida bruta (proj. fim de ano)", v:"83,4", u:"% PIB", d:"mediana Prisma", n:"out/26"}
+    ],
+    sections:[
+      {id:"mon", k:"Política monetária", h:"O ciclo de cortes começou em março e avança devagar de propósito.",
+       txt:`<p>O Copom abriu o ano mantendo a Selic em <strong>15%</strong>, a segunda maior taxa real do mundo. O ciclo de afrouxamento começou em março, menos de três semanas depois do início da guerra no Irã, e seguiu com cortes de <strong>25 bp</strong> por reunião, todos unânimes.</p>
+            <p>Na ata de setembro, o comitê atribuiu o quinto corte à desaceleração da atividade e da inflação e ao efeito dos juros altos sobre o crédito. Ao mesmo tempo, manteve a sinalização de que os riscos inflacionários são <strong>assimétricos para cima</strong> e citou o conflito no Oriente Médio e o aperto nas economias avançadas. O Focus projeta Selic de 13,50% no fim de 2026 e 12% no fim de 2027.</p>`,
+       steps:[["28/jan","Manutenção em 15,00%"],["18/mar","Corte para 14,75%: início do ciclo"],["29/abr","14,50%"],["17/jun","14,25%"],["05/ago","14,00%"],["16/set","13,75%: 5º corte seguido"]],
+       take:"Mesmo depois de 125 bp de cortes, o juro real segue perto de 9%, ainda muito acima do neutro. A política monetária continua contracionista. O debate não é se o BC deve cortar, e sim em que ritmo ele pode fazer isso com a inflação cheia acima do teto."},
+      {id:"fis", k:"Política fiscal", h:"A meta é cumprida no papel; o déficit efetivo diz outra coisa.",
+       txt:`<p>A meta de 2026 é um superávit de <strong>0,25% do PIB</strong>, com piso em zero. No 4º relatório bimestral, o governo elevou a estimativa de déficit primário efetivo de R$ 52 bi para <strong>R$ 80,9 bi</strong>. Depois das exceções previstas em lei, sobrou um rombo de R$ 13,6 bi em relação à meta, valor exatamente igual ao contingenciamento anunciado. Somado ao bloqueio por excesso de despesa, o congelamento chega a <strong>R$ 16,1 bi</strong>.</p>
+            <p>Em ano eleitoral, as despesas obrigatórias e a ampliação da isenção do IR para rendas de até R$ 5 mil, em vigor desde janeiro, pressionam a regra do arcabouço. A IFI vê divergências relevantes no PLOA 2027: projeta déficit de R$ 86,1 bi, enquanto a peça orçamentária prevê superávit.</p>`,
+       facts:[["Meta 2026","+0,25% PIB (piso 0%)"],["Déficit efetivo (gov.)","R$ 80,9 bi"],["Congelado","R$ 16,1 bi"],["Dívida bruta (Prisma)","83,4% PIB"]],
+       take:"A credibilidade do arcabouço é o principal prêmio de risco brasileiro hoje. O próximo governo, seja qual for, vai começar 2027 com uma revisão de regras como tema central."},
+      {id:"atv", k:"Atividade e inflação", h:"Crescimento perde fôlego; a inflação volta a furar o teto pelo canal da energia.",
+       txt:`<p>O PIB cresceu <strong>1,1%</strong> no 1º trimestre, puxado pelo agro, e desacelerou para <strong>0,5%</strong> no 2º, o que dá 2,0% na comparação anual. Os juros de 15% começaram a pesar no crédito e no investimento.</p>
+            <p>A inflação teve um ano de altos e baixos. Depois de deflação de 0,32% em agosto, o IPCA subiu <strong>0,82%</strong> em setembro, acima do consenso de 0,76%, e o acumulado em 12 meses voltou a <strong>4,58%</strong>, acima do teto de 4,5%. O choque de energia chega ao Brasil por diesel, fertilizantes e frete, mesmo com o país sendo exportador líquido de petróleo.</p>`,
+       facts:[["PIB 1T26","+1,1% t/t"],["PIB 2T26","+0,5% t/t"],["IPCA set","+0,82% m/m"],["IPCA 12m","4,58%"]]},
+      {id:"tra", k:"Mercado de trabalho", h:"O mercado de trabalho mais apertado da série histórica.",
+       txt:`<p>A taxa de desocupação caiu para <strong>5,3%</strong> no trimestre encerrado em agosto, a menor para o período desde o início da PNAD Contínua, em 2012. O número de ocupados chegou ao recorde de <strong>103,5 milhões</strong>, e o rendimento médio real (R$ 3.777) sobe <strong>3,7%</strong> em 12 meses.</p>
+            <p>Para o consumo e para a popularidade de quem governa, o quadro é positivo. Para o Banco Central, é o principal motivo de preocupação com a inflação de serviços: um mercado de trabalho assim reduz a velocidade com que a desaceleração do PIB se transforma em desinflação.</p>`,
+       facts:[["Desemprego","5,3% (jun–ago)"],["Ocupados","103,5 mi (recorde)"],["Renda real","+3,7% a/a"]]},
+      {id:"bol", k:"Bolsa e câmbio", h:"Ibovespa em recorde: termos de troca, rotação para emergentes e o “trade eleitoral”.",
+       txt:`<p>O Ibovespa sobe cerca de <strong>27% no ano</strong> e marcou recorde de fechamento em 9 de outubro, a <strong>209.067 pontos</strong>, no mesmo dia em que o dólar fechou abaixo de R$ 5 (R$ 4,99). Três forças explicam o movimento: o petróleo caro beneficia o setor de commodities, o carry elevado atrai fluxo estrangeiro em um momento de rotação global para emergentes, e, desde o primeiro turno, o mercado passou a precificar o cenário eleitoral.</p>
+            <p>Desde então houve alguma realização, com o índice perto de 205 mil pontos e o dólar em R$ 5,07 em 16/out. A volatilidade deve continuar alta até o segundo turno.</p>`,
+       facts:[["Recorde (fech.)","209.067 · 9/out"],["Ibovespa no ano","≈ +27%"],["USD/BRL no ano","≈ −8%"]]},
+      {id:"pol", k:"Cenário político", h:"Segundo turno apertado entre Flávio Bolsonaro e Lula em 25 de outubro.",
+       txt:`<p>No primeiro turno, em 4 de outubro, <strong>Flávio Bolsonaro (PL)</strong> ficou em primeiro, com cerca de <strong>47,0%</strong> dos votos válidos. O presidente <strong>Lula (PT)</strong>, candidato à reeleição, teve cerca de <strong>45,2%</strong>, e Augusto Cury (Avante) ficou em terceiro, com 2,9%. A diferença é de cerca de 2,2 milhões de votos.</p>
+            <p>Para os mercados, a pergunta central não é ideológica e sim fiscal: quem vencer vai encontrar um arcabouço sob pressão, uma dívida em alta e um orçamento de 2027 que, segundo a IFI, não fecha.</p>`,
+       take:"Nossa leitura: o mercado já reagiu às pesquisas, com bolsa em alta e real mais forte. Isso aumenta o risco de reversão se o resultado contrariar o que está no preço. Tratamos o segundo turno como evento binário de alta volatilidade, não como tendência."},
+      {id:"geo", k:"Conflitos e comércio", h:"Exposição indireta à guerra, alívio na frente tarifária com os EUA.",
+       txt:`<p>O Brasil não participa diretamente de nenhum conflito, mas sente seus efeitos. Como exportador líquido de petróleo, ganha com termos de troca, o que ajuda a Petrobras, o fiscal e a balança comercial. Por outro lado, depende de importação de <strong>diesel e fertilizantes</strong>, cujos preços e prazos de entrega pioraram com Hormuz e com o ataque a Ras Laffan, no Catar.</p>
+            <p>Na frente comercial, a decisão da Suprema Corte americana de 20 de fevereiro, que considerou ilegais as tarifas baseadas na IEEPA, derrubou a base legal da sobretaxa imposta ao Brasil em 2025 e abriu caminho para reembolsos a importadores. Tarifas setoriais pela Seção 232 continuam em vigor.</p>`}
+    ],
+    risks:{
+      up:["Resultado eleitoral seguido de compromisso fiscal crível, com fechamento da curva de juros","Petróleo em queda com a normalização em Hormuz, aliviando o IPCA de combustíveis","Fluxo estrangeiro persistente para emergentes, com real abaixo de R$ 5"],
+      down:["Reversão do “trade eleitoral” e abertura forte da curva de juros","Nova escalada no Golfo: diesel e fertilizantes mais caros e inflação de volta a 5%","Revisão das metas fiscais ou mudança no arcabouço sem âncora alternativa"]
+    },
+    agenda:[["25/out","Segundo turno presidencial","Política"],["03–04/nov","Copom: 282ª reunião","Juros"],["início dez","PIB do 3º trimestre (IBGE)","Atividade"],["08–09/dez","Copom: última reunião do ano","Juros"],["dez","Votação do PLOA 2027","Fiscal"]],
+    sources:[
+      ["Agência Brasil: BC reduz Selic para 13,75%","https://agenciabrasil.ebc.com.br/economia/noticia/2026-09/bc-reduz-juros-basicos-para-1375-ao-ano"],
+      ["Agência Brasil: ata do Copom de setembro","https://agenciabrasil.ebc.com.br/economia/noticia/2026-09/ata-do-copom-atribui-corte-da-selic-desaceleracao-da-economia"],
+      ["BCB: comunicados do Copom","https://www.bcb.gov.br/en/monetarypolicy/copomstatements"],
+      ["IFI/Senado: RAF nº 116 (set/2026)","https://www12.senado.leg.br/ifi/pdf/raf116_set2026.pdf"],
+      ["Ipea: desempenho do PIB no 2T26","https://www.ipea.gov.br/cartadeconjuntura/index.php/2026/09/desempenho-do-pib-segundo-trimestre-de-2026/"],
+      ["IBGE: PNAD Contínua","https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/47774-pnad-continua-trimestral-desocupacao-cai-em-13-das-27-ufs-no-2-trimestre-de-2026"],
+      ["Agência Senado: resultado do 1º turno","https://www12.senado.leg.br/noticias/materias/2026/10/04/flavio-bolsonaro-e-lula-disputam-o-segundo-turno-das-eleicoes-para-presidente"],
+      ["Forbes Brasil: Ibovespa em recorde","https://forbes.com.br/forbes-money/2026/10/ibovespa-recorde-dolar-abaixo-5-reais-pesquisas-eleitorais/"]
+    ]
+  },
+
+  eua: {
+    n:"02", name:"Estados Unidos", short:"EUA", tabStat:"Fed 3,75–4,00% · +25 bp",
+    kicker:"Estados Unidos · Revisão Jan–Out 2026",
+    title:"Um Fed com novo comando, uma alta inesperada e um emprego que não cresce.",
+    thesis:"Os EUA entraram diretamente na guerra, viram a Suprema Corte derrubar o principal instrumento tarifário do governo e trocaram o presidente do Fed. O resultado é uma economia que cresce com consumo resiliente, mas tem inflação de volta a 3,7% e geração de empregos praticamente parada.",
+    view:[
+      "O mercado esperava que Kevin Warsh trouxesse cortes. A primeira grande decisão dele foi uma alta. A independência do Fed passou no teste, mas o custo político vai aparecer.",
+      "Os dados de emprego apontam para estagflação leve: +29 mil vagas em setembro, salário real em queda desde abril e desemprego subindo para 4,2%.",
+      "O fiscal piorou sem novas leis: os reembolsos das tarifas da IEEPA zeraram a receita aduaneira líquida e levaram o déficit a cerca de US$ 2,1 tri."
+    ],
+    kpis:[
+      {l:"Fed funds", v:"3,75–4,00", u:"%", d:"+25 bp (16/set)", n:"1ª alta desde 2023"},
+      {l:"CPI (a/a)", v:"3,7", u:"%", d:"núcleo: 2,6%", n:"set/26"},
+      {l:"PIB 2º tri", v:"2,2", u:"% anual.", d:"prévia: 1,5%", n:"3ª estimativa"},
+      {l:"Desemprego", v:"4,2", u:"%", d:"payroll: +29 mil", n:"set/26"},
+      {l:"S&P 500", v:"≈7.700", u:"pts", d:"≈ +13% no ano", n:"recorde 7.819 · 6/out"},
+      {l:"Déficit federal AF26", v:"2,1", u:"US$ tri", d:"≈ 6,6% do PIB", n:"CBO"},
+      {l:"Reembolsos IEEPA", v:"≈166", u:"US$ bi", d:"a devolver", n:"tarifas ilegais"},
+      {l:"Prob. de recessão 12m", v:"25", u:"%", d:"pesquisa WSJ", n:"jul/26"}
+    ],
+    sections:[
+      {id:"mon", k:"Política monetária", h:"De Powell a Warsh: o Fed trocou de comando e voltou a subir juros.",
+       txt:`<p>O Fed passou o primeiro semestre parado em <strong>3,50–3,75%</strong>. Kevin Warsh foi confirmado pelo Senado por 54 a 45 e tomou posse em <strong>22 de maio</strong>, substituindo Jerome Powell, que continua no Board como diretor. A expectativa do governo era de cortes.</p>
+            <p>Com a inflação acima da meta e a tensão no Oriente Médio, o FOMC fez em <strong>16 de setembro</strong> sua primeira alta desde 2023, de 25 bp, levando os Fed funds a <strong>3,75–4,00%</strong>. A votação foi unânime (12 a 0) e a remuneração das reservas (IORB) foi para 3,90%. As projeções indicam taxa de 4,1% a 4,4% no fim do ano, e a ata publicada em 7/out mostrou que a maioria vê mais uma alta como provavelmente adequada.</p>`,
+       steps:[["jan–ago","Manutenção em 3,50–3,75%"],["22/mai","Warsh assume a presidência"],["16/set","+25 bp → 3,75–4,00% (12–0)"],["07/out","Ata: maioria vê nova alta até dez"]],
+       take:"A alta de setembro mostrou ao mercado que um presidente do Fed escolhido para cortar juros pode ser obrigado pelos dados a subir. Com o núcleo da inflação em 2,6% e o emprego quase parado, o espaço para uma segunda alta é menor do que a ata sugere."},
+      {id:"fis", k:"Política fiscal", h:"A Suprema Corte derrubou as tarifas e o déficit ficou com a conta.",
+       txt:`<p>Em <strong>20 de fevereiro</strong>, a Suprema Corte decidiu por 6 a 3 (<em>Learning Resources v. Trump</em>) que a IEEPA não autoriza a imposição de tarifas. Cerca de <strong>US$ 166 bi</strong> arrecadados passaram a ser reembolsáveis. Desde maio, os reembolsos superam a arrecadação e a receita aduaneira líquida está negativa. O governo substituiu parte das tarifas por medidas com base nas Seções 301 e 232, que arrecadam menos.</p>
+            <p>O CBO estima o déficit do ano fiscal de 2026 em <strong>US$ 2,1 tri</strong>, cerca de US$ 200 bi acima da projeção de fevereiro e perto de 6,6% do PIB, longe da meta de 3% defendida pelo Tesouro. Os custos militares da guerra somavam cerca de US$ 38 bi até agosto, com adicional estimado de US$ 2 a 3 bi por mês.</p>`,
+       facts:[["Decisão IEEPA","20/fev · 6–3"],["Déficit AF26 (CBO)","US$ 2,1 tri"],["Custo militar","≈ US$ 38 bi até ago"]]},
+      {id:"atv", k:"Atividade e inflação", h:"O consumo segura o PIB e a gasolina leva a inflação de volta para perto de 4%.",
+       txt:`<p>A primeira leitura do PIB do 2º trimestre (1,5%) assustou, mas a terceira estimativa revisou o número para <strong>2,2% anualizado</strong>, com o consumo crescendo 3,8%. O investimento em infraestrutura de IA continua sendo o motor do capex.</p>
+            <p>O CPI de setembro subiu <strong>0,6%</strong> no mês e <strong>3,7%</strong> em 12 meses, contra 3,4% em agosto. A gasolina, com alta de 9,1% no mês, explica mais da metade do avanço. O núcleo acelerou para <strong>2,6%</strong>, acima do consenso de 2,5%, o que indica algum repasse do choque de energia para outros preços.</p>`,
+       facts:[["PIB 2T (anual.)","2,2%"],["CPI set","3,7% a/a"],["Núcleo","2,6% a/a"],["Gasolina (m/m)","+9,1%"]]},
+      {id:"tra", k:"Mercado de trabalho", h:"Poucas contratações, poucas demissões, e o salário real encolhendo.",
+       txt:`<p>O payroll de setembro criou apenas <strong>29 mil vagas</strong>, contra consenso entre 90 e 113 mil, e as revisões tiraram mais 60 mil de julho e agosto. A média dos últimos 12 meses é de <strong>45 mil por mês</strong>. A taxa de desemprego subiu para <strong>4,2%</strong>.</p>
+            <p>Os salários sobem 3,0% em 12 meses, abaixo da inflação desde abril. A queda do salário real é o elo que pode transformar um choque de energia em desaceleração do consumo em 2027. Parte da fraqueza do payroll vem da menor oferta de mão de obra imigrante, o que reduz o número de vagas necessário para manter o desemprego estável.</p>`,
+       facts:[["Payroll set","+29 mil"],["Média 12m","45 mil/mês"],["Desemprego","4,2%"],["Salários","+3,0% a/a"]]},
+      {id:"bol", k:"Bolsa", h:"Recorde em outubro, com ganhos concentrados em poucas ações.",
+       txt:`<p>O S&P 500 chegou à mínima do ano em <strong>30 de março</strong> (6.317 pontos), no auge do choque do petróleo, e subiu cerca de 22% até o recorde de <strong>7.819 pontos em 6 de outubro</strong>. No ano, a alta é de cerca de 13%, mas a <strong>ação mediana do índice sobe só 5,7%</strong>, sinal de alta concentração em tecnologia e IA. A Nasdaq tinha alta de cerca de 18% no ano em 9 de outubro.</p>
+            <p>Em meados de outubro, uma onda de vendas em ações de IA, motivada por dúvidas sobre o financiamento por dívida da infraestrutura de data centers, lembrou o quanto o índice depende de poucos nomes.</p>`,
+       facts:[["Mínima","6.317 · 30/mar"],["Recorde","7.819 · 6/out"],["Ação mediana no ano","+5,7%"]]},
+      {id:"pol", k:"Cenário político", h:"Eleições de meio de mandato em 3 de novembro, com Democratas favoritos.",
+       txt:`<p>As pesquisas mostram vantagem democrata de 5 a 11 pontos na intenção de voto genérica para o Congresso. Mercados de previsão dão cerca de <strong>90%</strong> de chance de os Democratas retomarem a Câmara e cerca de <strong>63%</strong> no Senado, que tem disputa mais apertada.</p>
+            <p>Um Congresso dividido ou de oposição a partir de 2027 diminui a chance de novos pacotes fiscais e aumenta o risco de impasses no teto da dívida e no orçamento. Também dificulta a criação, por lei, de tarifas que substituam as da IEEPA.</p>`},
+      {id:"geo", k:"Conflitos e comércio", h:"Guerra no Irã, trégua com a China e uma negociação na Ucrânia que não avança.",
+       txt:`<p><strong>Irã.</strong> Os EUA participam diretamente da guerra desde os ataques conjuntos com Israel em 28 de fevereiro. Os efeitos econômicos chegam por combustíveis (os consumidores pagaram mais de US$ 40 bi a mais até maio), pelo 10 anos, que bateu 4,46% em março, e pelas despesas militares.</p>
+            <p><strong>China.</strong> Houve duas cúpulas Trump–Xi, em maio em Pequim e em setembro em Washington. A trégua comercial de Busan foi estendida até <strong>10 de janeiro</strong>, com tratamento tarifário para US$ 30 bi em bens não sensíveis de cada lado e o compromisso chinês de comprar carvão americano. Terras raras e Taiwan seguem sem acordo.</p>
+            <p><strong>Rússia–Ucrânia.</strong> O acordo de energia entre EUA e Rússia anunciado em 9 de outubro gerou reação de Kiev e congelou as visitas dos enviados americanos. A Rússia intensificou os ataques.</p>`}
+    ],
+    risks:{
+      up:["Reabertura plena de Hormuz derruba o petróleo e permite ao Fed parar depois de uma única alta","Ganhos de produtividade com IA sustentam o crescimento sem pressão salarial","Acordo comercial definitivo com a China antes de 10/jan"],
+      down:["Segunda alta do Fed com payroll perto de zero, levando a recessão em 2027","Correção nas ações de IA se espalhando pelo índice, que é muito concentrado","Impasse fiscal pós-midterms e novo aumento do prêmio de prazo dos Treasuries"]
+    },
+    agenda:[["27–28/out","FOMC: decisão de juros","Juros"],["03/nov","Eleições de meio de mandato","Política"],["início nov","Payroll de outubro","Emprego"],["dez","FOMC + projeções (SEP)","Juros"],["10/jan/27","Fim da trégua comercial com a China","Comércio"]],
+    sources:[
+      ["CNBC: decisão do Fed em setembro","https://www.cnbc.com/2026/09/16/fed-rate-decision-september-2026.html"],
+      ["Federal Reserve: ata do FOMC (set/2026)","https://www.federalreserve.gov/monetarypolicy/fomcminutes20260916.htm"],
+      ["CBS: posse de Warsh","https://www.cbsnews.com/news/kevin-warsh-sworn-in-federal-reserve-chair/"],
+      ["CNBC: payroll de setembro","https://www.cnbc.com/2026/10/02/jobs-report-september-2026.html"],
+      ["FT Portfolios: CPI de setembro","https://www.ftportfolios.com/Commentary/EconomicResearch/2026/10/14/the-consumer-price-index-cpi-rose-0.6percent-in-september"],
+      ["CNN: PIB do 2T revisado","https://www.cnn.com/2026/09/30/economy/us-economy-gdp-q2-final"],
+      ["Wharton: decisão da Suprema Corte sobre tarifas","https://budgetmodel.wharton.upenn.edu/p/2026-02-20-supreme-court-tariff-ruling/"],
+      ["Fortune: CBO e déficit de US$ 2,1 tri","https://fortune.com/2026/08/10/how-big-deficit-national-debt-tariffs-cbo/"],
+      ["CNBC: trégua com a China estendida","https://www.cnbc.com/2026/09/24/us-china-trade-truce-bessent-trump-xi.html"],
+      ["Kalshi: previsões das midterms","https://news.kalshi.com/p/2026-midterm-predictions"]
+    ]
+  },
+
+  europa: {
+    n:"03", name:"Zona do Euro", short:"Europa", tabStat:"Depósito 2,50% · +50 bp",
+    kicker:"Zona do Euro · Revisão Jan–Out 2026",
+    title:"A segunda crise energética em quatro anos, e um BCE de volta ao aperto.",
+    thesis:"A Europa é a região desenvolvida mais exposta ao choque do Golfo, pela dependência de GNL e pela perda de capacidade do Catar. Mesmo assim, o crescimento resistiu, a bolsa renovou recordes e o desemprego ficou estável. A conta está chegando pela inflação e pelo orçamento.",
+    view:[
+      "O BCE mudou de rumo duas vezes: adiou em março os cortes que estavam planejados e subiu juros em junho e setembro. Com o depósito em 2,50%, dentro da faixa neutra, a barreira para uma nova alta é alta.",
+      "A inflação de 3,8% é quase toda energia (+18,8%). O núcleo, em 2,5%, é a variável que o BCE vai acompanhar para decidir os próximos passos.",
+      "O fiscal está dividido: a Alemanha financia o rearmamento com dívida e a França não consegue aprovar orçamento. A diferença de espaço fiscal entre os países voltou a ser um tema de mercado."
+    ],
+    kpis:[
+      {l:"Taxa de depósito BCE", v:"2,50", u:"%", d:"+50 bp no ano", n:"jun e set"},
+      {l:"Inflação (HICP)", v:"3,8", u:"%", d:"núcleo: 2,5%", n:"set/26 · maior desde 2023"},
+      {l:"PIB 2º tri", v:"+0,6", u:"% t/t", d:"+1,2% a/a", n:"revisado de 0,4%"},
+      {l:"Desemprego", v:"6,4", u:"%", d:"estável no mês", n:"ago/26"},
+      {l:"Energia no HICP", v:"+18,8", u:"% a/a", d:"ago: +14,3%", n:"set/26"},
+      {l:"Stoxx 600", v:"≈640", u:"pts", d:"recorde em ago", n:"16/out"},
+      {l:"Gás TTF (pico)", v:">60", u:"€/MWh", d:"≈ 2× pré-guerra", n:"meados de mar"},
+      {l:"Defesa alemã 2027", v:"109", u:"€ bi", d:"rumo a 3,5% PIB", n:"orçamento"}
+    ],
+    sections:[
+      {id:"mon", k:"Política monetária", h:"De cortes planejados a duas altas: o BCE mudou de rumo em seis meses.",
+       txt:`<p>O BCE começou o ano com a taxa de depósito em <strong>2,00%</strong> e a expectativa de mais flexibilização. A guerra mudou o cenário: em <strong>19 de março</strong>, o banco adiou os cortes, revisou para cima a inflação de 2026 e falou abertamente em risco de estagflação.</p>
+            <p>Vieram depois duas altas de 25 bp, em junho e em <strong>10 de setembro</strong>, com o depósito em <strong>2,50%</strong>, a taxa de refinanciamento em 2,65% e a de empréstimo marginal em 2,90%. O comunicado avisou que a inflação deve ficar bem acima da meta por um tempo. Ao mesmo tempo, Lagarde afirmou que 2,50% já está dentro da faixa considerada neutra, e que só um aperto que restrinja ativamente a economia justificaria novas altas.</p>`,
+       steps:[["jan","Depósito em 2,00%"],["19/mar","Cortes adiados; alerta de estagflação"],["jun","+25 bp → 2,25%"],["10/set","+25 bp → 2,50%"]],
+       take:"O BCE está subindo juros contra um choque de oferta, o que é exatamente o que os manuais de política monetária desaconselham, porque o núcleo ainda está em 2,5%. Nossa leitura é que setembro encerra o ciclo de altas, salvo se houver nova escalada no Golfo."},
+      {id:"fis", k:"Política fiscal", h:"A Alemanha financia o rearmamento com dívida e a França trava no orçamento.",
+       txt:`<p><strong>Alemanha.</strong> Com a flexibilização do freio da dívida aprovada em 2025, Berlim lidera o rearmamento europeu. O orçamento de 2027 eleva o gasto central com defesa para <strong>€ 109 bi</strong>, a caminho de 3,5% do PIB em 2029, com <strong>€ 838 bi</strong> de endividamento entre 2027 e 2030. Pelas contas do BCE, cerca de 70% do gasto adicional com defesa na zona do euro vem da Alemanha.</p>
+            <p><strong>França.</strong> O orçamento de 2026 só foi aprovado em <strong>2 de fevereiro</strong>, depois de quatro meses de debate, três usos do artigo 49.3 e seis moções de censura. Com dívida perto de 119% do PIB e déficit de 5,4%, o governo de Sébastien Lecornu prepara um orçamento de 2027 que a imprensa francesa descreve como "missão impossível". No plano europeu, Merz descarta nova dívida conjunta e a negociação do orçamento da UE para 2028–2034 expõe divisões.</p>`,
+       facts:[["Defesa alemã 2027","€ 109 bi"],["Dívida alemã 27–30","€ 838 bi"],["França: dívida","≈ 119% PIB"],["França: déficit","5,4% PIB"]]},
+      {id:"atv", k:"Atividade e inflação", h:"O crescimento resistiu melhor que o esperado, mas a inflação está no maior nível desde 2023.",
+       txt:`<p>O PIB da zona do euro cresceu <strong>0,6%</strong> no 2º trimestre, após revisão da primeira leitura de 0,4%, e 1,2% em 12 meses. Os gastos com defesa e infraestrutura amorteceram o golpe. A indústria intensiva em energia sofreu mais: fabricantes de químicos e aço impuseram sobretaxas de até 30%, e Alemanha e Itália aparecem nas projeções como candidatas a recessão técnica até o fim do ano.</p>
+            <p>A inflação de setembro chegou a <strong>3,8%</strong>, contra 3,2% em agosto e 3,6% esperados, o maior nível desde setembro de 2023. A energia subiu <strong>18,8%</strong> em 12 meses e o núcleo ficou em <strong>2,5%</strong>.</p>`,
+       facts:[["PIB 2T","+0,6% t/t"],["HICP set","3,8%"],["Núcleo","2,5%"],["Energia","+18,8%"]]},
+      {id:"tra", k:"Mercado de trabalho", h:"Desemprego estável: as empresas preferem segurar trabalhadores.",
+       txt:`<p>A taxa de desemprego da zona do euro está em <strong>6,4%</strong> (agosto), estável no mês e só 0,1 p.p. acima de um ano antes. Na UE, a taxa é de 6,1%. O emprego cresceu <strong>0,1%</strong> no 2º trimestre.</p>
+            <p>O comportamento repete o de 2022: com escassez demográfica de mão de obra, as empresas preferem segurar funcionários a demitir em um choque que veem como temporário. Isso protege o consumo, mas reduz a produtividade e mantém a inflação de serviços resistente.</p>`,
+       facts:[["Zona do euro","6,4%"],["UE","6,1%"],["Emprego 2T","+0,1% t/t"]]},
+      {id:"bol", k:"Bolsa", h:"Recorde em agosto, com bancos e defesa liderando.",
+       txt:`<p>O Stoxx 600 renovou máximas históricas no início de <strong>agosto</strong>, com alta de cerca de 10–11% no ano naquele momento, e o DAX também marcou recorde. Os setores que mais se beneficiaram do cenário foram os <strong>bancos</strong>, com margens maiores pelos juros mais altos, a <strong>defesa</strong>, impulsionada pelo rearmamento, e a cadeia de semicondutores.</p>
+            <p>Em 16 de outubro, o Stoxx 600 estava perto de 640 pontos e o DAX em cerca de 25.600. Os setores de químicos, utilities com alta exposição a gás e consumo discricionário ficaram para trás.</p>`,
+       facts:[["Stoxx 600","≈ 640 pts"],["DAX","≈ 25.600 pts"],["Máximas","início de agosto"]]},
+      {id:"pol", k:"Cenário político", h:"França pré-2027 e uma direita radical que contesta defesa e apoio à Ucrânia.",
+       txt:`<p>O principal risco político da zona do euro é a França. Lecornu, que governa sem maioria, sobreviveu ao ciclo orçamentário de 2026 com concessões aos socialistas, mas enfrenta novas ameaças de censura a oito meses da eleição presidencial. Parte da urgência para fechar o orçamento da UE vem da possibilidade de vitória de Marine Le Pen, ou de seu campo político, em 2027.</p>
+            <p>Na França, Itália, Bélgica, Alemanha, Polônia e Romênia, partidos de direita radical exploram o custo de vida para contestar o aumento dos gastos com defesa e o apoio militar à Ucrânia.</p>`},
+      {id:"geo", k:"Conflitos", h:"Duas guerras na vizinhança: energia pelo sul, segurança pelo leste.",
+       txt:`<p><strong>Irã e Golfo.</strong> A Europa começou a crise com os estoques de gás perto de <strong>30%</strong>. O fechamento de Hormuz e o ataque de 18 de março a <strong>Ras Laffan</strong>, que cortou 17% da capacidade de GNL do Catar por um período estimado de 3 a 5 anos, quase dobraram o TTF, que passou de € 60/MWh. A Shell chegou a alertar para risco de falta de combustível em abril.</p>
+            <p><strong>Rússia–Ucrânia.</strong> As negociações estão paradas. O acordo de energia entre EUA e Rússia de 9 de outubro foi mal recebido em Kiev e nas capitais europeias, e a Rússia intensificou os ataques. A guerra continua como principal justificativa para o rearmamento e para o aumento estrutural do gasto público.</p>`}
+    ],
+    risks:{
+      up:["Normalização do GNL e do petróleo derruba a inflação para perto de 2% em 2027","O impulso fiscal alemão contagia o restante do bloco","Cessar-fogo na Ucrânia com reconstrução financiada por fundos europeus"],
+      down:["Nova escalada no Golfo antes do inverno, com estoques de gás insuficientes","Queda do governo Lecornu e abertura do spread OAT–Bund","Recessão técnica na Alemanha e na Itália com o BCE ainda contracionista"]
+    },
+    agenda:[["29/out","BCE: decisão de juros","Juros"],["fim de out","PIB do 3º trimestre (prévia)","Atividade"],["04/nov","Inflação de outubro (prévia)","Preços"],["dez","BCE + novas projeções","Juros"],["inverno","Nível dos estoques de gás","Energia"]],
+    sources:[
+      ["Euronews: BCE sobe juros para 2,5%","https://www.euronews.com/2026/09/10/ecb-hikes-rates-to-25-as-energy-shock-pushes-eurozone-inflation-higher"],
+      ["CNBC: decisão do BCE em setembro","https://www.cnbc.com/2026/09/10/ecb-interest-rate-hike-lagarde-iran.html"],
+      ["Eurostat: inflação de 3,8% (prévia de set)","https://ec.europa.eu/eurostat/web/products-euro-indicators/w/2-02102026-ap"],
+      ["Eurostat: PIB do 2T revisado","https://ec.europa.eu/eurostat/web/products-euro-indicators/w/2-07092026-ap"],
+      ["Eurostat: desemprego em 6,4%","https://ec.europa.eu/eurostat/web/products-euro-indicators/w/3-01102026-ap"],
+      ["Modern Diplomacy: financiamento do rearmamento","https://moderndiplomacy.eu/2026/10/04/europe-rearmament-welfare-energy-crisis-defence-financing/"],
+      ["CNBC: orçamento da UE e defesa","https://www.cnbc.com/2026/09/30/eu-budget-germany-merz-defense-trump.html"],
+      ["CNBC: Stoxx 600 em recorde","https://www.cnbc.com/2026/08/05/stoxx-600-record-leaders-laggards-markets.html"],
+      ["Al Jazeera: negociações sobre a Ucrânia","https://www.aljazeera.com/news/2026/10/10/us-hosts-productive-trilateral-talks-to-end-russia-ukraine-war"]
+    ]
+  },
+
+  china: {
+    n:"04", name:"China", short:"China", tabStat:"LPR 3,00% · 0 bp",
+    kicker:"China · Revisão Jan–Out 2026",
+    title:"Duas Chinas: exportações recorde e demanda doméstica sem tração.",
+    thesis:"A China fixou a menor meta de crescimento de sua história e deve cumpri-la, mas no piso do intervalo. Os números agregados escondem uma economia dividida: exportações e indústria ligadas à IA crescendo forte, enquanto consumo, investimento privado e o setor imobiliário seguem em contração.",
+    view:[
+      "O PBoC está parado há 16 meses de propósito. O estímulo vem do fiscal e de instrumentos direcionados, não de cortes amplos de juros.",
+      "A saída da deflação ao produtor (PPI +5,0%) vem de fora, pela energia. Não é sinal de demanda doméstica mais forte, e o CPI em 0,9% mostra isso.",
+      "Pela primeira vez em anos a China ficou de fora do rali global. O CSI 300 cai cerca de 10% no ano enquanto Coreia e Taiwan sobem mais de 60% com IA."
+    ],
+    kpis:[
+      {l:"Meta de PIB 2026", v:"4,5–5", u:"%", d:"menor da história", n:"APN · mar/26"},
+      {l:"PIB 2º tri", v:"4,3", u:"% a/a", d:"3T (consenso): 4,4%", n:"sai em 19/out"},
+      {l:"CPI", v:"0,9", u:"%", d:"alimentos: −1,7%", n:"set/26"},
+      {l:"PPI", v:"+5,0", u:"%", d:"maior desde jun/22", n:"set/26"},
+      {l:"Exportações (US$)", v:"+36,3", u:"% a/a", d:"ago: +25,0%", n:"set/26"},
+      {l:"LPR 1 ano", v:"3,00", u:"%", d:"16 meses sem mudança", n:"repo 7d: 1,40%"},
+      {l:"Déficit oficial", v:"4", u:"% PIB", d:"amplo: ≈ 9,5%", n:"recorde"},
+      {l:"CSI 300", v:"≈ −10", u:"% ano", d:"10 semanas de queda", n:"16/out"}
+    ],
+    sections:[
+      {id:"mon", k:"Política monetária", h:"Um banco central que escolheu não agir, e explica por quê.",
+       txt:`<p>O PBoC mantém a taxa de recompra reversa de 7 dias em <strong>1,40%</strong> desde maio de 2025, e as LPRs de 1 e 5 anos (<strong>3,0%</strong> e <strong>3,5%</strong>) estão sem alteração há 16 meses. Há três razões principais. A margem dos bancos (NIM de 1,41%) acabou de ter a primeira alta trimestral desde 2022. A volta do PPI ao terreno positivo reduz a urgência. E Pequim fez uma escolha deliberada por estímulos fiscais e direcionados.</p>
+            <p>No fim de setembro vieram cortes de juros <strong>direcionados</strong> e subsídios a hipotecas, em vez de reduções amplas. O consenso da pesquisa da Reuters é de LPR e compulsório estáveis até pelo menos o 1º trimestre de 2027.</p>`,
+       facts:[["Repo reverso 7d","1,40%"],["LPR 1a / 5a","3,00% / 3,50%"],["NIM bancos","1,41% (2T)"]],
+       take:"O PBoC entende que juro mais baixo não resolve um problema de confiança do consumidor e do mercado imobiliário. Concordamos. Por isso o crescimento de 2027 depende quase só do tamanho do esforço fiscal."},
+      {id:"fis", k:"Política fiscal", h:"Déficit recorde e o primeiro ano do 15º Plano Quinquenal.",
+       txt:`<p>Na Assembleia Popular Nacional de março, o governo fixou a meta de crescimento em <strong>4,5–5%</strong>, a menor desde o início dos anos 1990, e manteve o déficit oficial em <strong>4% do PIB</strong>, o maior da série. O déficit amplo calculado pela Bloomberg fica perto de 9,5%. As emissões de títulos especiais de ultralongo prazo somam CNY 1,3 tri. 2026 é o primeiro ano do <strong>15º Plano Quinquenal</strong>, voltado para "crescimento de qualidade", autossuficiência tecnológica e controle de riscos.</p>
+            <p>Em outubro, Pequim liberou <strong>CNY 550 bi</strong> em cotas de dívida não utilizadas para aliviar os governos locais e financiar infraestrutura. Segundo o Goldman Sachs, as restrições de financiamento dos governos locais continuam limitando a execução.</p>`,
+       facts:[["Meta PIB","4,5–5%"],["Déficit oficial","4% PIB"],["Títulos ultralongos","CNY 1,3 tri"],["Cotas liberadas (out)","CNY 550 bi"]]},
+      {id:"atv", k:"Atividade e preços", h:"Indústria e exportações aceleram; imóveis e consumo continuam fracos.",
+       txt:`<p>O PIB cresceu <strong>4,3%</strong> em 12 meses no 2º trimestre (0,9% no trimestre). O consenso da Reuters para o 3º trimestre, que sai em 19 de outubro, é de 4,4%. A divisão interna é clara: até agosto, o investimento em ativos fixos caía <strong>7,2%</strong> e o investimento imobiliário, <strong>19,2%</strong>.</p>
+            <p>Nos preços, o PPI subiu <strong>5,0%</strong> em setembro, o maior avanço desde junho de 2022, impulsionado por combustíveis. O CPI de <strong>0,9%</strong> mostra a outra face: gasolina com alta de 16,6% e alimentos com queda de 1,7%. A deflação ao produtor terminou, mas por causa de um choque externo, e não de uma recuperação da demanda.</p>`,
+       facts:[["PIB 2T","4,3% a/a"],["FAI (jan–ago)","−7,2%"],["Invest. imobiliário","−19,2%"],["PPI / CPI set","+5,0% / +0,9%"]]},
+      {id:"tra", k:"Mercado de trabalho", h:"A taxa urbana está dentro da meta; o desemprego jovem segue alto.",
+       txt:`<p>A meta oficial é de desemprego urbano perto de <strong>5,5%</strong>, e a taxa agregada segue dentro desse limite. O problema está entre os jovens: a desocupação de 16 a 24 anos (sem contar estudantes) está perto de <strong>15%</strong>, reflexo da falta de vagas qualificadas no setor privado e da fraqueza de serviços e construção civil.</p>
+            <p>As estatísticas de emprego chinesas têm cobertura limitada. Por isso acompanhamos também indicadores indiretos, como o subíndice de emprego dos PMIs e a renda disponível, que mostram um consumidor cauteloso e com alta poupança precaucional.</p>`,
+       facts:[["Meta urbana","≈ 5,5%"],["Desemprego jovem","≈ 15%"]]},
+      {id:"bol", k:"Bolsa", h:"A China ficou de fora do rali da IA.",
+       txt:`<p>O CSI 300 cai cerca de <strong>10% no ano</strong> até 16 de outubro, depois de uma sequência de dez semanas de queda. Na semana até 16/out, recuou 3,4%, o pior resultado desde meados de julho. No mesmo período, as bolsas de <strong>Coreia e Taiwan subiram cerca de 65%</strong>, puxadas pela cadeia de semicondutores para IA. O Hang Seng gira perto de 24.300 pontos, com recuperação recente das ações de internet.</p>
+            <p>Pelo menos dez empresas da cadeia de IA chinesa anunciaram recompras de ações para sustentar os preços, o tipo de intervenção que costuma marcar a fase de capitulação de um ciclo de baixa.</p>`,
+       facts:[["CSI 300 no ano","≈ −10%"],["Hang Seng","≈ 24.300"],["Coreia/Taiwan","≈ +65%"]]},
+      {id:"pol", k:"Cenário político e comércio", h:"Duas cúpulas com Trump, uma trégua estendida e pouca substância.",
+       txt:`<p>Xi Jinping e Donald Trump se reuniram em <strong>maio, em Pequim</strong>, e em <strong>setembro, em Washington</strong>, em visita de Estado. O resultado mais concreto foi a extensão da trégua comercial de Busan até <strong>10 de janeiro de 2027</strong>, que mantém tarifas mais baixas e a suspensão dos controles chineses sobre terras raras. As partes também acertaram tratamento tarifário para US$ 30 bi em bens não sensíveis de cada lado, e a China se comprometeu a comprar 10 milhões de toneladas de carvão americano por ano em 2027 e 2028.</p>
+            <p>Analistas descrevem os resultados como "limitados e provisórios". O superávit comercial recorde com os EUA e com a UE aumenta a tensão com Bruxelas.</p>`},
+      {id:"geo", k:"Conflitos", h:"A maior importadora de petróleo do Golfo e o risco permanente de Taiwan.",
+       txt:`<p><strong>Golfo.</strong> China, Índia, Japão e Coreia do Sul compram cerca de <strong>75%</strong> das exportações de petróleo da região, o que coloca a China entre as economias mais expostas a Hormuz. Os estoques estratégicos e a compra de petróleo russo e iraniano com desconto amorteceram o impacto no volume, mas não no preço. Em outubro, a Kpler mostrava as exportações do Oriente Médio perto do nível pré-guerra.</p>
+            <p><strong>Taiwan.</strong> Na cúpula de maio, Xi avisou que um tratamento equivocado da questão de Taiwan colocaria "toda a relação em grande risco". O tema não apareceu nos comunicados oficiais de setembro, sinal de que não houve avanço. Pequim também restringiu exportações de tungstênio, mais um uso do controle de minerais críticos como instrumento geopolítico.</p>`}
+    ],
+    risks:{
+      up:["Estímulo fiscal maior no Comitê Central de dezembro, com foco em consumo","Acordo comercial definitivo com os EUA, incluindo terras raras","Estabilização das vendas de imóveis com os subsídios a hipotecas"],
+      down:["Fim da trégua em 10/jan sem renovação e volta das tarifas altas","Reação protecionista da UE ao superávit recorde","PPI alto comprimindo as margens da indústria sem melhora da demanda"]
+    },
+    agenda:[["19/out","PIB do 3º trimestre e dados de setembro","Atividade"],["20/out","Fixação das LPRs","Juros"],["nov","Dados de comércio e preços de outubro","Comércio"],["dez","Conferência Central de Trabalho Econômico","Fiscal"],["10/jan/27","Vencimento da trégua com os EUA","Comércio"]],
+    sources:[
+      ["Reuters/Yahoo: pesquisa sobre o PIB do 3T","https://finance.yahoo.com/economy/articles/china-q3-growth-set-pick-092516257.html"],
+      ["CNBC: meta de crescimento de 4,5–5%","https://www.cnbc.com/2026/03/05/china-gdp-two-sessions-.html"],
+      ["Bloomberg: meta de déficit recorde","https://www.bloomberg.com/news/articles/2026-03-05/china-keeps-budget-deficit-target-at-record-high-to-spur-economy"],
+      ["CNBC: PPI no maior nível desde 2022","https://www.cnbc.com/2026/10/14/producer-prices-in-china-rise-fastest-since-june-2022-on-fuel-costs.html"],
+      ["FXStreet/Commerzbank: exportações em setembro","https://www.fxstreet.com/news/china-export-surge-and-stronger-ppi-commerzbank-202610151257"],
+      ["BBVA Research: China Economic Outlook (set/2026)","https://www.bbvaresearch.com/en/publicaciones/china-economic-outlook-september-2026/"],
+      ["TrendForce: LPR sem mudança há 16 meses","https://datatrack.trendforce.com/blog/content/64760/chinas-one-year-lpr-kept-unchanged-for-16-consecutive-months-steady-at-a-record-low-of-30"],
+      ["Asia Times: China fora do rali da IA","https://asiatimes.com/2026/10/why-china-is-missing-the-big-ai-rally/"],
+      ["CNBC: balanço da cúpula Trump–Xi","https://www.cnbc.com/2026/09/25/trump-xi-summit-takeaways.html"]
+    ]
+  }
+};
+const ORDER = ["brasil","eua","europa","china"];
+
+/* ============================================================
+   RENDER — REGIÕES
+   ============================================================ */
+const $ = (s, el=document) => el.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const tablist = $(".selector");
+const mount = $("#regionMount");
+
+ORDER.forEach(key => {
+  const r = REGIONS[key];
+  const b = document.createElement("button");
+  b.className = "tab"; b.type = "button"; b.role = "tab";
+  b.id = "tab-" + key; b.dataset.key = key;
+  b.setAttribute("aria-controls","regionMount");
+  b.innerHTML = `<span class="t-n">${r.n}</span><span class="t-name"><span class="t-long">${r.name}</span><span class="t-short">${r.short}</span></span><span class="t-stat">${r.tabStat}</span>`;
+  b.addEventListener("click", () => select(key, true));
+  tablist.appendChild(b);
+});
+tablist.addEventListener("keydown", e => {
+  if (!["ArrowRight","ArrowLeft"].includes(e.key)) return;
+  const i = ORDER.indexOf(current), n = e.key === "ArrowRight" ? (i+1)%4 : (i+3)%4;
+  select(ORDER[n], false); $("#tab-"+ORDER[n]).focus();
+});
+
+let current = null, tocObserver = null;
+function select(key, scroll){
+  if (!REGIONS[key]) key = "brasil";
+  current = key;
+  document.querySelectorAll(".tab").forEach(t => {
+    const on = t.dataset.key === key;
+    t.setAttribute("aria-selected", on); t.tabIndex = on ? 0 : -1;
+  });
+  mount.setAttribute("aria-labelledby","tab-"+key);
+  mount.innerHTML = renderRegion(REGIONS[key], key);
+  try { history.replaceState(null, "", "#" + key); } catch(e){}
+  wireToc();
+  if (scroll) {
+    const y = $("#regioes").getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({top: y, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
+  }
+}
+
+function renderRegion(r, key){
+  const secs = r.sections;
+  const tocItems = secs.map((s,i) => `<li><a href="#${key}-${s.id}" data-id="${key}-${s.id}"><span>${String(i+1).padStart(2,"0")}</span>${esc(s.k)}</a></li>`).join("")
+    + `<li><a href="#${key}-riscos" data-id="${key}-riscos"><span>${String(secs.length+1).padStart(2,"0")}</span>Balanço de riscos</a></li>`
+    + `<li><a href="#${key}-agenda" data-id="${key}-agenda"><span>${String(secs.length+2).padStart(2,"0")}</span>Agenda até dezembro</a></li>`;
+
+  const kpis = r.kpis.map(k => `
+    <div class="kpi">
+      <div class="k-l">${esc(k.l)}</div>
+      <div class="k-v mono-num">${esc(k.v)}${k.u ? ` <small>${esc(k.u)}</small>` : ""}</div>
+      <div class="k-d">${esc(k.d)} <i>· ${esc(k.n)}</i></div>
+    </div>`).join("");
+
+  const body = secs.map((s,i) => `
+    <section class="sec" id="${key}-${s.id}">
+      <div class="s-k"><b>${String(i+1).padStart(2,"0")}</b>${esc(s.k)}</div>
+      <h3>${esc(s.h)}</h3>
+      <div class="txt">${s.txt}</div>
+      ${s.steps ? `<ul class="steps">${s.steps.map(([d,e]) => `<li><b>${esc(d)}</b><span>${esc(e)}</span></li>`).join("")}</ul>` : ""}
+      ${s.facts ? `<dl class="facts">${s.facts.map(([a,b]) => `<div class="fact"><dt>${esc(a)}</dt><dd>${esc(b)}</dd></div>`).join("")}</dl>` : ""}
+      ${s.take ? `<p class="take"><span>Visão da casa</span>${esc(s.take)}</p>` : ""}
+    </section>`).join("");
+
+  const n = secs.length;
+  return `
+  <article class="region">
+    <header class="r-head">
+      <div>
+        <div class="eyebrow">${esc(r.kicker)}</div>
+        <h2>${esc(r.title)}</h2>
+        <p class="thesis">${esc(r.thesis)}</p>
+      </div>
+      <aside class="view">
+        <div class="eyebrow">Nossa leitura em três pontos</div>
+        <ol>${r.view.map(v => `<li><span>${esc(v)}</span></li>`).join("")}</ol>
+      </aside>
+    </header>
+    <div class="kpis" aria-label="Indicadores-chave">${kpis}</div>
+    <div class="body">
+      <nav class="toc" aria-label="Seções"><div class="eyebrow">Nesta região</div><ol>${tocItems}</ol></nav>
+      <div>
+        ${body}
+        <section class="sec" id="${key}-riscos">
+          <div class="s-k"><b>${String(n+1).padStart(2,"0")}</b>Balanço de riscos</div>
+          <h3>O que mudaria nossa visão até o fim do ano.</h3>
+          <div class="risks">
+            <div><h4><span class="ar">↑</span>Riscos positivos</h4><ul>${r.risks.up.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
+            <div><h4><span class="ar">↓</span>Riscos negativos</h4><ul>${r.risks.down.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
+          </div>
+        </section>
+        <section class="sec" id="${key}-agenda" style="border-bottom:0;margin-bottom:0">
+          <div class="s-k"><b>${String(n+2).padStart(2,"0")}</b>Agenda até dezembro</div>
+          <h3>Datas que vão mexer com o preço dos ativos.</h3>
+          <ul class="agenda">${r.agenda.map(([d,e,w]) => `<li><span class="d">${esc(d)}</span><span class="e">${esc(e)}</span><span class="w">${esc(w)}</span></li>`).join("")}</ul>
+          <div class="eyebrow" style="margin-top:40px">Fontes principais</div>
+          <div class="sources">${r.sources.map(([t,u]) => `<a href="${u}" target="_blank" rel="noopener">${esc(t)} ↗</a>`).join("")}</div>
+        </section>
+      </div>
+    </div>
+  </article>`;
+}
+
+function wireToc(){
+  if (tocObserver) tocObserver.disconnect();
+  const links = [...mount.querySelectorAll(".toc a")];
+  tocObserver = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (en.isIntersecting) links.forEach(a => a.classList.toggle("on", a.dataset.id === en.target.id));
+    });
+  }, {rootMargin:"-30% 0px -60% 0px"});
+  mount.querySelectorAll(".sec").forEach(s => tocObserver.observe(s));
+}
+
+/* compact sticky selector */
+const selWrap = $(".selector-wrap");
+const sentinel = document.createElement("div");
+selWrap.before(sentinel);
+new IntersectionObserver(([e]) => selWrap.classList.toggle("compact", !e.isIntersecting && e.boundingClientRect.top < 0)).observe(sentinel);
+
+/* ============================================================
+   GRÁFICOS
+   ============================================================ */
+const NS = "http://www.w3.org/2000/svg";
+const el = (tag, attrs, parent) => { const n = document.createElementNS(NS, tag); for (const k in attrs) n.setAttribute(k, attrs[k]); parent && parent.appendChild(n); return n; };
+const fmt = (v, d=1) => v.toLocaleString("pt-BR",{minimumFractionDigits:d,maximumFractionDigits:d});
+
+function tipFor(fig, tip){
+  return {
+    show(evt, html){
+      tip.innerHTML = html; tip.classList.add("on");
+      const fr = fig.getBoundingClientRect();
+      const x = evt.clientX - fr.left, y = evt.clientY - fr.top;
+      const w = tip.offsetWidth;
+      tip.style.left = Math.min(Math.max(8, x - w/2), fr.width - w - 8) + "px";
+      tip.style.top = (y - tip.offsetHeight - 14) + "px";
+    },
+    hide(){ tip.classList.remove("on"); }
+  };
+}
+
+/* Figura 1 — Brent */
+(function(){
+  const pts = [
+    {d:"2026-02-27", v:72.5, t:"Véspera da guerra", lab:"27/fev"},
+    {d:"2026-03-31", v:118.4, t:"Pico: Hormuz fechado, ataque a Ras Laffan", lab:"31/mar"},
+    {d:"2026-07-01", v:71.6, t:"Mínima após cessar-fogo e reabertura", lab:"1/jul"},
+    {d:"2026-07-23", v:100.7, t:"Re-escalada no fim de julho", lab:"23/jul"},
+    {d:"2026-08-10", v:84.1, t:"Teerã condiciona a normalização de Hormuz", lab:"10/ago"}
+  ];
+  const events = [{d:"2026-02-28", t:"Início da guerra", a:"end"},{d:"2026-04-07", t:"Cessar-fogo", a:"start"}];
+  const svg = $("#brentSvg"), W=640, H=300, m={l:40,r:16,t:22,b:30};
+  const x0 = Date.parse("2026-01-01"), x1 = Date.parse("2026-10-16");
+  const X = d => m.l + (Date.parse(d)-x0)/(x1-x0)*(W-m.l-m.r);
+  const Y = v => m.t + (1-(v-60)/(130-60))*(H-m.t-m.b);
+  const ax = el("g",{class:"ax"},svg);
+  [60,80,100,120].forEach(v => { el("line",{x1:m.l,x2:W-m.r,y1:Y(v),y2:Y(v),"stroke-width":1},ax); const t=el("text",{x:m.l-8,y:Y(v)+4,"text-anchor":"end"},ax); t.textContent=v; });
+  ["01","02","03","04","05","06","07","08","09","10"].forEach((mm,i) => {
+    const t = el("text",{x:X(`2026-${mm}-01`),y:H-8,"text-anchor":"start"},ax);
+    t.textContent = ["jan","fev","mar","abr","mai","jun","jul","ago","set","out"][i];
+  });
+  events.forEach(e => {
+    el("line",{x1:X(e.d),x2:X(e.d),y1:m.t-6,y2:H-m.b,stroke:"var(--muted)","stroke-width":1,"stroke-dasharray":"2 3"},svg);
+    const t = el("text",{x:X(e.d)+(e.a==="end"?-5:5),y:m.t-8,class:"lbl-m","text-anchor":e.a},svg); t.textContent = e.t;
+  });
+  el("polyline",{points:pts.map(p=>`${X(p.d)},${Y(p.v)}`).join(" "),fill:"none",stroke:"var(--accent)","stroke-width":1.5,"stroke-dasharray":"4 4",opacity:.5},svg);
+  const fig = $("#figBrent"), tp = tipFor(fig, $("#tipBrent"));
+  pts.forEach((p,i) => {
+    el("circle",{cx:X(p.d),cy:Y(p.v),r:5.5,fill:"var(--accent)",stroke:"var(--surface)","stroke-width":2},svg);
+    const above = i!==1 && i!==3;
+    const lt = el("text",{x:X(p.d)+(i===0?-8:8),y:Y(p.v)+(i===1?4:above?18:-10),class:"lbl","text-anchor":i===0?"end":"start"},svg);
+    lt.textContent = "US$ " + fmt(p.v);
+    const hit = el("circle",{cx:X(p.d),cy:Y(p.v),r:18,class:"hit",tabindex:0},svg);
+    const html = `<b>${p.lab} · US$ ${fmt(p.v)}</b>${p.t}`;
+    hit.addEventListener("mousemove", e => tp.show(e, html));
+    hit.addEventListener("mouseleave", tp.hide);
+  });
+  $("#brentTbl").innerHTML = `<tr><th>Data</th><th>Brent (US$)</th><th>Contexto</th></tr>` + pts.map(p=>`<tr><td>${p.lab}</td><td>${fmt(p.v)}</td><td style="font-family:var(--sans)">${p.t}</td></tr>`).join("");
+})();
+
+/* Figura 2 — divergência de juros */
+(function(){
+  const data = [
+    {k:"Zona do Euro", v:50, s:"2,00% → 2,50%", key:"europa"},
+    {k:"EUA", v:25, s:"3,75% → 4,00% (teto)", key:"eua"},
+    {k:"China", v:0, s:"1,40% → 1,40% (repo 7d)", key:"china"},
+    {k:"Brasil", v:-125, s:"15,00% → 13,75%", key:"brasil"}
+  ];
+  const svg = $("#ratesSvg"), W=420, H=300, m={l:96,r:20,t:14,b:34};
+  const lo=-150, hi=75;
+  const X = v => m.l + (v-lo)/(hi-lo)*(W-m.l-m.r);
+  const rowH = (H-m.t-m.b)/data.length, bh = 22;
+  const ax = el("g",{class:"ax"},svg);
+  [-150,-100,-50,0,50].forEach(v => { el("line",{x1:X(v),x2:X(v),y1:m.t,y2:H-m.b,"stroke-width":1},ax); const t=el("text",{x:X(v),y:H-12,"text-anchor":"middle"},ax); t.textContent=(v>0?"+":"")+v; });
+  el("line",{x1:X(0),x2:X(0),y1:m.t-4,y2:H-m.b,stroke:"var(--ink)","stroke-width":1},svg);
+  const fig = $("#figRates"), tp = tipFor(fig, $("#tipRates"));
+  data.forEach((d,i) => {
+    const cy = m.t + rowH*i + rowH/2;
+    const name = el("text",{x:m.l-12,y:cy+4,"text-anchor":"end",class:"lbl-s"},svg); name.textContent = d.k;
+    if (d.v === 0){
+      el("circle",{cx:X(0),cy,r:5,fill:"var(--surface)",stroke:"var(--muted)","stroke-width":2},svg);
+    } else {
+      const x = Math.min(X(0),X(d.v)), w = Math.abs(X(d.v)-X(0));
+      const col = d.v>0 ? "var(--hike)" : "var(--cut)";
+      // rounded data-end, square at the zero baseline
+      const r = 4, y = cy-bh/2;
+      const path = d.v>0
+        ? `M${x},${y} H${x+w-r} Q${x+w},${y} ${x+w},${y+r} V${y+bh-r} Q${x+w},${y+bh} ${x+w-r},${y+bh} H${x} Z`
+        : `M${x+w},${y} H${x+r} Q${x},${y} ${x},${y+r} V${y+bh-r} Q${x},${y+bh} ${x+r},${y+bh} H${x+w} Z`;
+      el("path",{d:path,fill:col},svg);
+    }
+    const vt = el("text",{x:d.v>=0 ? X(d.v)+8 : X(0)+8,y:cy+4,"text-anchor":"start",class:"lbl"},svg);
+    vt.textContent = (d.v>0?"+":"") + d.v + " bp";
+    const hit = el("rect",{x:m.l-90,y:cy-rowH/2,width:W-m.l+90-m.r,height:rowH,class:"hit"},svg);
+    hit.style.cursor = "pointer";
+    hit.addEventListener("mousemove", e => tp.show(e, `<b>${d.k} · ${(d.v>0?"+":"")+d.v} bp</b>${d.s}<br><span style="opacity:.7">Clique para abrir a região</span>`));
+    hit.addEventListener("mouseleave", tp.hide);
+    hit.addEventListener("click", () => select(d.key, true));
+  });
+  $("#ratesTbl").innerHTML = `<tr><th>Região</th><th>Variação</th><th>Nível</th></tr>` + data.map(d=>`<tr><td>${d.k}</td><td>${(d.v>0?"+":"")+d.v} bp</td><td>${d.s}</td></tr>`).join("");
+})();
+
+/* ============================================================
+   TEMA + INICIALIZAÇÃO
+   ============================================================ */
+(function(){
+  const root = document.documentElement, btn = $("#themeBtn");
+  let saved = null; try { saved = localStorage.getItem("lhasset-theme"); } catch(e){}
+  if (saved) root.dataset.theme = saved;
+  const isDark = () => root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  const label = () => btn.textContent = isDark() ? "CLARO" : "ESCURO";
+  label();
+  btn.addEventListener("click", () => {
+    root.dataset.theme = isDark() ? "light" : "dark";
+    try { localStorage.setItem("lhasset-theme", root.dataset.theme); } catch(e){}
+    label();
+  });
+})();
+
+select((location.hash || "#brasil").slice(1).split("-")[0], false);
+window.addEventListener("hashchange", () => {
+  const k = location.hash.slice(1).split("-")[0];
+  if (REGIONS[k] && k !== current) select(k, true);
+});
+</script>
+</body>
+</html>
